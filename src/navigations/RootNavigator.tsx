@@ -2,13 +2,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import AuthenticationNavigator from './AuthNavigator';
 import AppNavigator from './AppNavigator';
-import {AuthenticationContext} from '../contexts/AuthenticationContext';
+// import {AuthenticationContext} from '../contexts/AuthenticationContext';
 
 const RootNavigator = () => {
-  const {isLoggedIn} = React.useContext(AuthenticationContext);
+  // const {isLoggedIn} = React.useContext(AuthenticationContext);
   return (
     <NavigationContainer>
-      {isLoggedIn ? <AppNavigator /> : <AuthenticationNavigator />}
+      {true ? <AppNavigator /> : <AuthenticationNavigator />}
     </NavigationContainer>
   );
 };
