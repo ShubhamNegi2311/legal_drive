@@ -1,13 +1,14 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import {style} from './style';
 
-const LoninScreen = () => {
+const LoginScreen = () => {
   return (
-    <View style={style.mainComponent}>
-      <Text>LoninScreen</Text>
+    <View style={style.mainContainer}>
+      <View style={style.upperContainer}></View>
+      <View style={style.lowerContainer}></View>
     </View>
   );
 };
 
-export default LoninScreen;
+export default LoginScreen;
