@@ -1,6 +1,7 @@
 export const Colors = {
   background: '#f4f4f4',
   primary: '#6777f0',
+  secondary: '#69a861',
 };
 export const WHITE = '#FFFFFF';
 export const BLACK = '#000000';

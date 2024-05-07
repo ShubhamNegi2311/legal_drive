@@ -15,8 +15,11 @@ import {
 import Bell_Icon from 'react-native-vector-icons/Octicons';
 import Search_Icon from 'react-native-vector-icons/AntDesign';
 import Sliders_Icon from 'react-native-vector-icons/FontAwesome6';
-import ImageComponent from '../../components/atoms/image_component';
 
+import ImageComponent from '../../components/atoms/image_component';
+import {FAB} from 'react-native-paper';
+import ProgressStatusComponent from '../../components/progress_status_component';
+const WELCOME = 'Welcome to asldj aljk asfljdk akjfls flksjflfjld sjlj';
 const HomeScreen = () => {
   return (
     <View style={style.mainContainer}>
@@ -29,8 +32,8 @@ const HomeScreen = () => {
             borderRadius={HS_15}
           />
           <View>
-            <BaseText color={WHITE} fontSize={MS_15}>
-              Welcome
+            <BaseText color={WHITE} fontSize={MS_15} style={{flexWrap: 'wrap'}}>
+              {WELCOME}
             </BaseText>
             <BaseText color={WHITE} textType={'bold'} fontSize={MS_20}>
               Sahil Rawat
@@ -49,7 +52,9 @@ const HomeScreen = () => {
             <Sliders_Icon name="sliders" color={BLACK} size={MS_25} />
           </View>
         </View>
+        <ProgressStatusComponent />
       </View>
+      <FAB icon="plus" color={WHITE} style={style.Fab} />
     </View>
   );
 };

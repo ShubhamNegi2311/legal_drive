@@ -9,5 +9,6 @@ export type AppStackParamList = {
 export type DashboardStackParamList = {
   homeScreen: undefined;
   filesScreen: undefined;
+  searchScreen: undefined;
   profileScreen: undefined;
 };

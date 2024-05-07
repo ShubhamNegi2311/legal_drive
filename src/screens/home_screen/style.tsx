@@ -5,6 +5,7 @@ import {
   HS_15,
   HS_20,
   MS_20,
+  VS_100,
   VS_20,
   VS_30,
   VS_5,
@@ -27,6 +28,7 @@ export const style = StyleSheet.create({
   lowerContainer: {
     backgroundColor: Colors.background,
     paddingHorizontal: HS_20,
+    alignItems: 'center',
   },
   searchInput: {
     backgroundColor: WHITE,
@@ -38,7 +40,6 @@ export const style = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'center',
-    borderWidth: 1,
     borderColor: 'gray',
     borderRadius: HS_10,
     paddingHorizontal: HS_15,
@@ -51,5 +52,13 @@ export const style = StyleSheet.create({
   iconContainer: {
     flexDirection: 'row',
     gap: HS_10,
+  },
+  Fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
+    backgroundColor: Colors.primary,
+    borderRadius: VS_100,
   },
 });

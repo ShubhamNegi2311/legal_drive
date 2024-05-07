@@ -9,6 +9,9 @@ import {
   HS_15,
   VS_5,
   VS_30,
+  MS_45,
+  VS_10,
+  VS_100,
 } from '../../styling/mixins';
 
 export const style = StyleSheet.create({
@@ -28,6 +31,7 @@ export const style = StyleSheet.create({
   lowerContainer: {
     backgroundColor: Colors.background,
     paddingHorizontal: HS_20,
+    flex: 1,
   },
   searchInput: {
     backgroundColor: WHITE,
@@ -38,8 +42,6 @@ export const style = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'gray',
     borderRadius: HS_10,
     paddingHorizontal: HS_15,
     paddingVertical: VS_5,
@@ -60,11 +62,33 @@ export const style = StyleSheet.create({
     alignSelf: 'center',
   },
   itemContainer: {
-    backgroundColor: 'blue',
+    marginVertical: VS_10,
+    backgroundColor: WHITE,
     padding: HS_15,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     borderRadius: HS_10,
+  },
+  fileIconContainer: {
+    // backgroundColor: '#e2eafe',
+    width: MS_45,
+    height: MS_45,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: HS_10,
+  },
+  Fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
+    backgroundColor: Colors.primary,
+    borderRadius: VS_100,
+  },
+  itemInfo: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: HS_10,
   },
 });
