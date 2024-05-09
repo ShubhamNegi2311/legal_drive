@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Colors, WHITE} from '../../styling/colors';
+import {BLACK, Colors, WHITE} from '../../styling/colors';
 import {
   HS_20,
   VS_20,
@@ -35,9 +35,9 @@ export const style = StyleSheet.create({
   },
   searchInput: {
     backgroundColor: WHITE,
-    // padding: HS_15,
     fontSize: MS_20,
     flexGrow: 1,
+    color: BLACK,
   },
   inputContainer: {
     flexDirection: 'row',

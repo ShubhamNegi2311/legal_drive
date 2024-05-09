@@ -3,11 +3,20 @@ import React from 'react';
 import {style} from './style';
 import {BaseText} from '../../components/atoms/text';
 import {WHITE, BLACK, TextColor} from '../../styling/colors';
-import {MS_12, MS_18, MS_20, MS_25, MS_30, VS_5} from '../../styling/mixins';
+import {
+  HS_70,
+  MS_12,
+  MS_18,
+  MS_20,
+  MS_25,
+  MS_30,
+  VS_5,
+} from '../../styling/mixins';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Sliders_Icon from 'react-native-vector-icons/FontAwesome6';
 import Dot_Icon from 'react-native-vector-icons/Entypo';
 import {FAB} from 'react-native-paper';
+import SpaceView from '../../components/atoms/space_view';
 
 type ListProps = {
   name: string;
@@ -148,7 +157,11 @@ const FilesScreen = () => {
       </View>
       <View style={style.lowerContainer}>
         <View style={style.inputContainer}>
-          <TextInput style={style.searchInput} placeholder="Search" />
+          <TextInput
+            style={style.searchInput}
+            placeholder="Search"
+            placeholderTextColor="#afafb1"
+          />
           <View style={style.iconContainer}>
             <Icon name="search1" color={BLACK} size={MS_25} />
             <Sliders_Icon name="sliders" color={BLACK} size={MS_25} />
@@ -185,6 +198,7 @@ const FilesScreen = () => {
             );
           }}
           keyExtractor={(item, index) => index.toString()}
+          ListFooterComponent={<SpaceView height={HS_70} />}
         />
       </View>
       <FAB icon="plus" color={WHITE} style={style.Fab} />
