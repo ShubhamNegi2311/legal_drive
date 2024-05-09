@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ScrollView, TextInput, View} from 'react-native';
+import {FlatList, ScrollView, TextInput, View} from 'react-native';
 import {style} from './style';
 import {BaseText} from '../../components/atoms/text';
 import {BLACK, Colors, WHITE} from '../../styling/colors';
@@ -24,12 +24,23 @@ import ImageComponent from '../../components/atoms/image_component';
 import {FAB} from 'react-native-paper';
 import ProgressStatusComponent from '../../components/progress_status_component';
 import {Calendar} from 'react-native-calendars';
-import CheckBox from '@react-native-community/checkbox';
-const WELCOME = 'Welcome to asldj aljk asfljdk akjfls flksjflfjld sjlj';
+import TaskItem from '../../components/task_item_component';
+import SpaceView from '../../components/atoms/space_view';
+const WELCOME = 'Welcome';
 const HomeScreen = () => {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [selected, setSelected] = useState('');
+  const tasksOfTheDay = [
+    'Wake up at 7:00 AM',
+    'Brush teeth and wash face',
+    'Exercise for 30 minutes',
+    'Eat a healthy breakfast',
 
+    'Wrap up work tasks for the day',
+    'Cook and have dinner',
+    'Spend quality time with family or friends',
+    'Relax and unwind with a book or favorite TV show',
+    'Prepare clothes and items for tomorrow',
+  ];
   return (
     <View style={style.mainContainer}>
       <View style={style.upperContainer}>
@@ -110,30 +121,16 @@ const HomeScreen = () => {
               <BaseText fontSize={MS_25} color="#9c9c9c">
                 Tasks Today
               </BaseText>
-              <View style={{}}>
-                <CheckBox
-                  boxType={'square'}
-                  // disabled={false}
-                  style={{}}
-                  tintColors={{true: '#6a9963', false: '#9c9c9c'}}
-                  onCheckColor="#6a9963"
-                  value={toggleCheckBox}
-                  onValueChange={newValue => setToggleCheckBox(newValue)}
-                />
-                <BaseText>sfjdsd;f;l</BaseText>
-              </View>
-              <View>
-                <CheckBox
-                  boxType={'square'}
-                  // disabled={false}
-                  style={{}}
-                  tintColors={{true: '#6a9963', false: '#9c9c9c'}}
-                  onCheckColor="#6a9963"
-                  disabled={false}
-                  value={toggleCheckBox}
-                  onValueChange={newValue => setToggleCheckBox(newValue)}
-                />
-              </View>
+              <FlatList
+                scrollEnabled={false}
+                data={tasksOfTheDay}
+                showsVerticalScrollIndicator={false}
+                renderItem={({item}: {item: string}) => {
+                  return <TaskItem task={item} />;
+                }}
+                keyExtractor={(item, index) => index.toString()}
+                ListFooterComponent={<SpaceView height={HS_50} />}
+              />
             </View>
           </View>
         </ScrollView>

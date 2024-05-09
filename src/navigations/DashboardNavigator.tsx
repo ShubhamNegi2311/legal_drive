@@ -11,7 +11,7 @@ import Search_Icon from 'react-native-vector-icons/AntDesign';
 import User_Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {BLACK, Colors, TextColor} from '../styling/colors';
-import { VS_10 } from '../styling/mixins';
+import {VS_10, VS_30, VS_50, VS_70, VS_80} from '../styling/mixins';
 
 const Tab = createBottomTabNavigator<DashboardStackParamList>();
 
@@ -24,6 +24,7 @@ const DashboardNavigator = () => {
         tabBarActiveTintColor: Colors.primary,
         tabBarInactiveTintColor: BLACK,
         // tabBarStyle: {paddingVertical:}
+        tabBarStyle: {height: VS_70, paddingBottom: VS_10},
       }}>
       <Tab.Screen
         name={'homeScreen'}
