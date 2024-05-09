@@ -38,6 +38,7 @@ export const style = StyleSheet.create({
     fontSize: MS_20,
     flexGrow: 1,
     color: BLACK,
+    width: '80%',
   },
   inputContainer: {
     flexDirection: 'row',
@@ -54,6 +55,7 @@ export const style = StyleSheet.create({
   iconContainer: {
     flexDirection: 'row',
     gap: HS_10,
+    width: '20%',
   },
   arrowIcon: {
     position: 'absolute',

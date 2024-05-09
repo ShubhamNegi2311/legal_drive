@@ -12,8 +12,7 @@ const TaskItem = (props: TaskItemProps) => {
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
       <CheckBox
         boxType={'square'}
-        // disabled={false}
-        style={{}}
+        style={{backgroundColor:'red'}}
         tintColors={{
           true: Platform.OS === 'android' ? '#6a9963' : '#dbfed6',
           false: '#9c9c9c',

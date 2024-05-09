@@ -13,6 +13,10 @@ import {
   HS_5,
   MS_30,
   VS_40,
+  HS_20,
+  HS_40,
+  HS_30,
+  HS_35,
 } from '../../styling/mixins';
 import Dots_Icon from 'react-native-vector-icons/Entypo';
 
@@ -82,7 +86,7 @@ const ProgressStatusComponent = () => {
           rotation={270}
           tintColor={Colors.primary}
           backgroundColor={Colors.secondary}
-          style={{position: 'absolute', top: VS_20}}
+          style={{position: 'absolute', top: VS_20, left: HS_35}}
         />
         <View style={{paddingTop: VS_20}}>
           <View style={{alignItems: 'center'}}>

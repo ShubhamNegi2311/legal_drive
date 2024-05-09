@@ -85,6 +85,7 @@ const HomeScreen = () => {
               backgroundColor: WHITE,
             }}>
             <Calendar
+              hideExtraDays={true}
               style={{
                 borderTopRightRadius: MS_15,
                 borderTopLeftRadius: MS_15,
