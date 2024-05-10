@@ -45,25 +45,33 @@ const HomeScreen = () => {
   return (
     <View style={style.mainContainer}>
       <View style={style.upperContainer}>
-        <View style={{flexDirection: 'row', gap: HS_20}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            gap: HS_20,
+            flexShrink: 1,
+            flexGrow: 1,
+          }}>
           <ImageComponent
             height={HS_50}
             width={HS_50}
             uri={'https://reactnativepaper.com/'}
             borderRadius={HS_15}
           />
-          <View>
-            <BaseText color={WHITE} fontSize={MS_15} style={{flexWrap: 'wrap'}}>
+          <View style={{flexGrow: 1, flex: 1}}>
+            <BaseText color={WHITE} fontSize={MS_15} numberOfLines={1}>
               {WELCOME}
             </BaseText>
-            <BaseText color={WHITE} textType={'bold'} fontSize={MS_20}>
+            <BaseText
+              color={WHITE}
+              textType={'bold'}
+              fontSize={MS_20}
+              numberOfLines={1}>
               Sahil Rawat
             </BaseText>
           </View>
         </View>
-        <View>
-          <Bell_Icon name="bell" color={WHITE} size={MS_25} />
-        </View>
+        <Bell_Icon name="bell" color={WHITE} size={MS_25} />
       </View>
       <View style={style.lowerContainer}>
         <View style={style.inputContainer}>
