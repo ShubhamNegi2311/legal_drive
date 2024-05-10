@@ -11,10 +11,10 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ioni from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Octicons from 'react-native-vector-icons/Octicons';
-import { WHITE } from 'styles/colors';
+import {WHITE} from 'styles/colors';
 
 /** CUSTOM MODULES */
-import { moderateScale } from 'styles/mixins';
+import {moderateScale} from 'styles/mixins';
 
 // Which Icon vector Library needs to be used
 export enum Vector {
@@ -24,7 +24,7 @@ export enum Vector {
   FONTISTO,
   FONT_AWESOME,
   ANT,
-  OCT
+  OCT,
 }
 
 type IconViewProps = {
@@ -36,7 +36,7 @@ type IconViewProps = {
   suppressHighlighting?: boolean;
 };
 
-const IconView: React.FC<IconViewProps> = (props) => {
+const IconView: React.FC<IconViewProps> = props => {
   const suppressHighlighting = props.suppressHighlighting ?? true;
   const name = props.iconName;
   const size = props.iconSize

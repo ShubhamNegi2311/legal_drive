@@ -1,6 +1,6 @@
 /* REACT  */
 import {StyleSheet} from 'react-native';
-import {VS_12, MS_12} from '../../../styling/mixins';
+import {MS_12, VS_12} from 'styles/mixins';
 
 /* STYLE */
 

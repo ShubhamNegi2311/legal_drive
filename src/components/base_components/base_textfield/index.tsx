@@ -1,17 +1,17 @@
 /* REACT */
 import React from 'react';
-import { KeyboardTypeOptions, View } from 'react-native';
+import {KeyboardTypeOptions, View} from 'react-native';
 
 /* MODULES */
-import { TextInput, TextInputProps } from 'react-native-paper';
+import {TextInput, TextInputProps} from 'react-native-paper';
 
 /* CUSTOM MODULES */
 import SpaceView from 'components/atoms/space_view';
-import { BaseText } from 'components/base_components/base_text';
-import { BUTTON_HEIGHT, BUTTON_WIDTH } from 'styles/common';
+import {BaseText} from 'components/base_components/base_text';
+import {BUTTON_HEIGHT, BUTTON_WIDTH} from 'styles/common';
 
 /* STYLE */
-import { BLACK, BorderColor, TextColor } from 'styles/colors';
+import {BLACK, BorderColor, TextColor} from 'styles/colors';
 import {
   HS_10,
   MS_1,
@@ -20,7 +20,7 @@ import {
   MS_14,
   VS_10,
   VS_2,
-  VS_5
+  VS_5,
 } from 'styles/mixins';
 import style from './style';
 
@@ -72,11 +72,11 @@ const BaseTextFieldView = (props: BaseTextFieldProps) => {
         mode={'outlined'}
         outlineStyle={{
           borderRadius: props?.borderRadius ?? MS_100,
-          borderWidth: MS_1
+          borderWidth: MS_1,
         }}
         contentStyle={{
           paddingTop: props?.multiLine ?? false ? VS_10 : 0,
-          paddingBottom: props?.multiLine ?? false ? VS_10 : 0
+          paddingBottom: props?.multiLine ?? false ? VS_10 : 0,
         }}
         textAlignVertical={'top'}
         onFocus={props.onFocus}
@@ -95,7 +95,7 @@ const BaseTextFieldView = (props: BaseTextFieldProps) => {
           backgroundColor: props.bgColor ?? BLACK,
           width: props.width ?? BUTTON_WIDTH,
           height: props.height ?? BUTTON_HEIGHT,
-          fontSize: props.fontSize ?? MS_14
+          fontSize: props.fontSize ?? MS_14,
         }}
         right={props.right}
         left={props.left}
@@ -109,9 +109,8 @@ const BaseTextFieldView = (props: BaseTextFieldProps) => {
             color: TextColor.ALERT,
             width: props.width ?? BUTTON_WIDTH,
             paddingStart: HS_10,
-            marginTop: VS_5
-          }}
-        >
+            marginTop: VS_5,
+          }}>
           {props.validationText}
         </BaseText>
       ) : (

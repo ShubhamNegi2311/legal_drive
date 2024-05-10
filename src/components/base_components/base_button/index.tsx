@@ -1,17 +1,17 @@
 /* REACT */
 import React from 'react';
-import { TextProps, View } from 'react-native';
+import {TextProps, View} from 'react-native';
 
 /* MODULES */
 
 /* CUSTOM MODULES */
-import { BaseText } from 'components/base_components/base_text';
+import {BaseText} from 'components/base_components/base_text';
 import RNBounceable from 'components/hoc/rn_bouncable';
 
 /** STYLE */
-import { BLACK, WHITE } from 'styles/colors';
-import { MS_16 } from 'styles/mixins';
-import { styles } from './style';
+import {BLACK, WHITE} from 'styles/colors';
+import {MS_16} from 'styles/mixins';
+import {styles} from './style';
 
 interface BaseButtonProps extends TextProps {
   btnText: string;

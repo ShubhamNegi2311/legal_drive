@@ -24,15 +24,15 @@ export interface IRNBounceableProps extends PressableProps {
   style?: CustomStyleProp;
 }
 
-export const RNBounceable: React.FC<IRNBounceableProps> = (props) => {
+export const RNBounceable: React.FC<IRNBounceableProps> = props => {
   const bounceValue = new Animated.Value(1);
 
   function bounceAnimation(
     value: number,
     velocity: number,
-    bounciness: number
+    bounciness: number,
   ) {
-    const { useNativeDriver = true } = props;
+    const {useNativeDriver = true} = props;
     const animation = Animated.spring(bounceValue, {
       toValue: value,
       velocity,
@@ -59,7 +59,7 @@ export const RNBounceable: React.FC<IRNBounceableProps> = (props) => {
       // TODO: Uncomment this if any issue occured ragarding to the props of pressable
       // {...this.props}
       disabled={props.disabled}
-      style={[{ transform: [{ scale: bounceValue }] }, style]}
+      style={[{transform: [{scale: bounceValue}]}, style]}
       onPressIn={() => {
         bounceAnimation(bounceEffectIn, bounceVelocityIn, bouncinessIn);
       }}

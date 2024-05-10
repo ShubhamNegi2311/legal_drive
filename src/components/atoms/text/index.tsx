@@ -4,15 +4,15 @@ import {Text, TextProps, TextStyle} from 'react-native';
 
 /** STYLE */
 import {styles} from './style';
-import {TextColor} from '../../../styling/colors';
-import {MS_16} from '../../../styling/mixins';
+import {MS_16} from 'styles/mixins';
+import {TextColor} from 'styles/colors';
 
 // By default text size, rest if size is passed, it will be used from there
 const FONT_SIZE = MS_16;
 
 interface BaseTextProps extends TextProps {
   textType?: 'regular' | 'bold' | 'medium' | 'light' | 'semi-bold';
-  color?: TextColor | string;
+  color?: string;
   fontSize?: number;
   // fontFamily?:"bold" | "semi_bold" | "regular"
 }

@@ -1,6 +1,6 @@
 /* REACT */
 import {StyleSheet} from 'react-native';
-import {moderateScale} from '../../../styling/mixins';
+import {moderateScale} from 'styles/mixins';
 
 /** CUSTOM MODULE */
 

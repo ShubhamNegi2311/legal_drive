@@ -1,5 +1,5 @@
 /* REACT */
-import { Dimensions } from 'react-native';
+import {Dimensions} from 'react-native';
 
 export const WINDOW_WIDTH = Dimensions.get('window').width;
 export const WINDOW_HEIGHT = Dimensions.get('window').height;
@@ -44,7 +44,7 @@ const moderateScale = (size: number, factor = 0.5) => {
   return size + (horizontalScale(size) - size) * factor;
 };
 
-export { horizontalScale, moderateScale, verticalScale };
+export {horizontalScale, moderateScale, verticalScale};
 
 // horizontal scale pre defined values to reduce calculations at view reendering time.
 export const HS_1 = horizontalScale(1);

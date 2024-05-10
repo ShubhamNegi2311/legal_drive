@@ -1,14 +1,14 @@
 /* REACT */
 import React from 'react';
-import { TextProps, TextStyle } from 'react-native';
+import {TextProps, TextStyle} from 'react-native';
 
 /* MODULES */
-import { Text } from 'react-native-paper';
+import {Text} from 'react-native-paper';
 
 /* STYLE */
-import { TextColor } from 'styles/colors';
-import { MS_16 } from 'styles/mixins';
-import { styles } from './style';
+import {TextColor} from 'styles/colors';
+import {MS_16} from 'styles/mixins';
+import {styles} from './style';
 
 // By default text size, rest if size is passed, it will be used from there
 const FONT_SIZE = MS_16;
@@ -25,7 +25,7 @@ const BaseTextView = ({
   ...props
 }: React.PropsWithChildren<BaseTextProps>) => {
   // Deconstruct props
-  const { color, fontSize } = props;
+  const {color, fontSize} = props;
 
   // Create style object and pass default color or from the props,if passed
   const newStyle = styles(color ?? TextColor.WHITE, fontSize ?? FONT_SIZE);

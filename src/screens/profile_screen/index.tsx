@@ -1,6 +1,6 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-import {BLACK} from '../../styling/colors';
+import {BLACK} from 'styles/colors';
 
 const ProfileScreen = () => {
   return (

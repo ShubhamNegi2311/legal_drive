@@ -2,20 +2,7 @@ import React, {useState} from 'react';
 import {FlatList, ScrollView, TextInput, View} from 'react-native';
 import {style} from './style';
 import {BaseText} from '../../components/atoms/text';
-import {BLACK, Colors, WHITE} from '../../styling/colors';
-import {
-  HS_15,
-  HS_20,
-  HS_50,
-  MS_15,
-  MS_20,
-  MS_25,
-  MS_30,
-  VS_10,
-  VS_15,
-  VS_20,
-  VS_3,
-} from '../../styling/mixins';
+
 import Bell_Icon from 'react-native-vector-icons/Octicons';
 import Search_Icon from 'react-native-vector-icons/AntDesign';
 import Sliders_Icon from 'react-native-vector-icons/FontAwesome6';
@@ -26,6 +13,20 @@ import ProgressStatusComponent from '../../components/progress_status_component'
 import {Calendar} from 'react-native-calendars';
 import TaskItem from '../../components/task_item_component';
 import SpaceView from '../../components/atoms/space_view';
+import {WHITE, BLACK, PRIMARY, BACKGROUND} from 'styles/colors';
+import {
+  HS_20,
+  HS_50,
+  HS_15,
+  MS_15,
+  MS_20,
+  MS_25,
+  VS_20,
+  VS_3,
+  VS_10,
+  VS_15,
+} from 'styles/mixins';
+
 const WELCOME = 'Welcome';
 const HomeScreen = () => {
   const [selected, setSelected] = useState('');
@@ -37,7 +38,7 @@ const HomeScreen = () => {
 
     'Wrap up work tasks for the day',
     'Cook and have dinner',
-    'Spend quality time with family or friends',
+    'Spend quality time with family or friendsa a ad aa dl',
     'Relax and unwind with a book or favorite TV show',
     'Prepare clothes and items for tomorrow',
   ];
@@ -61,7 +62,7 @@ const HomeScreen = () => {
           </View>
         </View>
         <View>
-          <Bell_Icon name="bell" color={WHITE} size={MS_30} />
+          <Bell_Icon name="bell" color={WHITE} size={MS_25} />
         </View>
       </View>
       <View style={style.lowerContainer}>
@@ -94,7 +95,7 @@ const HomeScreen = () => {
                 [selected]: {
                   selected: true,
                   disableTouchEvent: true,
-                  selectedColor: Colors.primary,
+                  selectedColor: PRIMARY,
                 },
               }}
               onDayPress={day => {
@@ -102,14 +103,14 @@ const HomeScreen = () => {
                 setSelected(day.dateString);
               }}
               theme={{
-                todayTextColor: Colors.primary,
+                todayTextColor: PRIMARY,
               }}
             />
             <View
               style={{
                 width: '95%',
                 height: VS_3,
-                backgroundColor: Colors.background,
+                backgroundColor: BACKGROUND,
                 alignSelf: 'center',
                 marginVertical: VS_10,
               }}
@@ -118,6 +119,8 @@ const HomeScreen = () => {
               style={{
                 paddingHorizontal: HS_20,
                 paddingVertical: VS_15,
+                // backgroundColor:'red',
+                // flexWrap:'wrap'
               }}>
               <BaseText fontSize={MS_25} color="#9c9c9c">
                 Tasks Today

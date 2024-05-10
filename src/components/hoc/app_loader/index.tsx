@@ -1,6 +1,6 @@
 /* REACT */
 import React from 'react';
-import { View } from 'react-native';
+import {View} from 'react-native';
 
 /** MODULES */
 import NetInfo from '@react-native-community/netinfo';
@@ -8,24 +8,24 @@ import NetInfo from '@react-native-community/netinfo';
 /* CUSTOM MODULES */
 import LoaderComponent from 'components/molecules/loader_component';
 import NoInternet from 'components/molecules/no_internet';
-import { useAppDataContext } from 'contexts/app_data_context';
-import { NetworkContext } from 'contexts/network_provider';
+import {useAppDataContext} from 'contexts/app_data_context';
+import {NetworkContext} from 'contexts/network_provider';
 
 /* STYLE */
-import { style } from './style';
+import {style} from './style';
 
 type AppLoaderProps = {
   children: React.ReactNode;
 };
 
-const AppLoader: React.FC<AppLoaderProps> = (props) => {
+const AppLoader: React.FC<AppLoaderProps> = props => {
   const {
-    appDataState: { isLoading }
+    appDataState: {isLoading},
   } = useAppDataContext();
-  const { isConnected, setIsConnected } = React.useContext(NetworkContext);
+  const {isConnected, setIsConnected} = React.useContext(NetworkContext);
 
   React.useEffect(() => {
-    const removeNetInfoSubscription = NetInfo.addEventListener((state) => {
+    const removeNetInfoSubscription = NetInfo.addEventListener(state => {
       const offline = state.isConnected && state.isInternetReachable;
       setIsConnected(offline ?? true);
     });

@@ -1,16 +1,16 @@
 import {StyleSheet} from 'react-native';
-import {BLACK, Colors, WHITE} from '../../styling/colors';
+import {WHITE, BLACK, PRIMARY, BACKGROUND} from 'styles/colors';
 import {
+  HS_20,
+  VS_20,
+  VS_50,
+  MS_20,
   HS_10,
   HS_15,
-  HS_20,
-  MS_20,
-  VS_100,
-  VS_20,
-  VS_30,
   VS_5,
-  VS_50,
-} from '../../styling/mixins';
+  VS_30,
+  VS_100,
+} from 'styles/mixins';
 
 export const style = StyleSheet.create({
   mainContainer: {
@@ -19,16 +19,15 @@ export const style = StyleSheet.create({
   upperContainer: {
     flexDirection: 'row',
     paddingHorizontal: HS_20,
-    backgroundColor: Colors.primary,
+    backgroundColor: PRIMARY,
     paddingTop: VS_20,
     paddingBottom: VS_50,
     alignItems: 'center',
     justifyContent: 'space-between',
   },
   lowerContainer: {
-    backgroundColor: Colors.background,
+    backgroundColor: BACKGROUND,
     paddingHorizontal: HS_20,
-    // alignItems: 'center',
     flex: 1,
   },
   searchInput: {
@@ -61,7 +60,7 @@ export const style = StyleSheet.create({
     margin: 16,
     right: 0,
     bottom: 0,
-    backgroundColor: Colors.primary,
+    backgroundColor: PRIMARY,
     borderRadius: VS_100,
   },
 });

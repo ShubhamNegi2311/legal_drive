@@ -1,4 +1,4 @@
-import { Platform } from 'react-native';
+import {Platform} from 'react-native';
 import {
   HS_50,
   MS_100,
@@ -10,7 +10,7 @@ import {
   VS_52,
   VS_90,
   WINDOW_HEIGHT,
-  WINDOW_WIDTH
+  WINDOW_WIDTH,
 } from './mixins';
 
 export const BUTTON_BORDER_RADIUS = MS_100;
@@ -28,14 +28,14 @@ export const shadow = {
   shadowColor: '#000000',
   shadowOffset: {
     width: 0,
-    height: 3
+    height: 3,
   },
   shadowOpacity: 0.29,
   shadowRadius: 4.65,
   // Android
-  elevation: 7
+  elevation: 7,
 };
 export const bottomSheetDraggableIcon = {
   height: VS_5,
-  width: HS_50
+  width: HS_50,
 };

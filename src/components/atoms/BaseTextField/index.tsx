@@ -5,12 +5,13 @@ import {KeyboardTypeOptions, View} from 'react-native';
 /* MODULES */
 import {TextInput} from 'react-native-paper';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {WHITE} from '../../../styling/colors';
-import {VS_2, MS_12} from '../../../styling/mixins';
-import {BaseHeight, BaseWidth} from '../../../utils/Contants';
-import SpaceView from '../space_view';
+
+import {BaseHeight, BaseWidth} from 'utils/Contants';
+import SpaceView from 'components/atoms/space_view';
 import style from './style';
-import {BaseText} from '../text';
+import {BaseText} from 'components/atoms/text';
+import {WHITE} from 'styles/colors';
+import {VS_2, MS_12} from 'styles/mixins';
 
 /* CUSTOM MODULES */
 

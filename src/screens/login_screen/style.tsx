@@ -1,10 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {Colors, WHITE} from '../../styling/colors';
-import {HS_40} from '../../styling/mixins';
+import {BACKGROUND, WHITE} from 'styles/colors';
+import {HS_40} from 'styles/mixins';
 
 export const style = StyleSheet.create({
   mainContainer: {
-    backgroundColor: Colors.background,
+    backgroundColor: BACKGROUND,
   },
   upperContainer: {
     height: '55%',

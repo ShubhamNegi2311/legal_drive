@@ -2,8 +2,8 @@
 import React from 'react';
 
 /** STYLE */
-import FastImage, { FastImageProps } from 'react-native-fast-image';
-import { style } from './style';
+import FastImage, {FastImageProps} from 'react-native-fast-image';
+import {style} from './style';
 
 interface BaseImageProps extends FastImageProps {
   imageURL: string;
@@ -12,19 +12,19 @@ interface BaseImageProps extends FastImageProps {
   borderRadius?: number;
 }
 
-const BaseImage: React.FC<BaseImageProps> = (props) => {
-  const { imageURL, height, width, borderRadius } = props;
+const BaseImage: React.FC<BaseImageProps> = props => {
+  const {imageURL, height, width, borderRadius} = props;
   const viewStyle = style(height, width, borderRadius ?? 0);
 
   const getImageSource = React.useCallback(
     (imgUrl: string) => {
       if (imgUrl) {
-        return { uri: imageURL ?? '' };
+        return {uri: imageURL ?? ''};
       } else {
         return require('assets/images/profile-placeholder.jpeg');
       }
     },
-    [imageURL]
+    [imageURL],
   );
 
   return (

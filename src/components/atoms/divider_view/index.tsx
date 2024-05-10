@@ -1,9 +1,9 @@
 /* REACT */
 import React from 'react';
-import { View } from 'react-native';
+import {View} from 'react-native';
 
 /** STYLE */
-import { style } from './style';
+import {style} from './style';
 
 type DividerViewProps = {
   height?: number;
@@ -11,7 +11,7 @@ type DividerViewProps = {
   color?: string;
 };
 
-const DividerView: React.FC<DividerViewProps> = (props) => {
+const DividerView: React.FC<DividerViewProps> = props => {
   const viewStyle = style(props.height, props.width, props.color);
   return <View style={viewStyle.container} />;
 };
