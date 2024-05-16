@@ -1,13 +1,13 @@
 import {View, TextInput, FlatList} from 'react-native';
 import React from 'react';
 import {style} from './style';
-import {BaseText} from '../../components/atoms/text';
+import {BaseText} from 'components/atoms/text';
 
 import Icon from 'react-native-vector-icons/AntDesign';
 import Sliders_Icon from 'react-native-vector-icons/FontAwesome6';
 import Dot_Icon from 'react-native-vector-icons/Entypo';
 import {FAB} from 'react-native-paper';
-import SpaceView from '../../components/atoms/space_view';
+import SpaceView from 'components/atoms/space_view';
 import {WHITE, BLACK, TextColor} from 'styles/colors';
 import {MS_20, MS_25, MS_30, VS_5, MS_18, MS_12, HS_70} from 'styles/mixins';
 

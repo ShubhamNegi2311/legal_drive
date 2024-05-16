@@ -10,6 +10,9 @@ import {
   VS_5,
   VS_30,
   VS_100,
+  VS_10,
+  VS_3,
+  VS_15,
 } from 'styles/mixins';
 
 export const style = StyleSheet.create({
@@ -62,5 +65,29 @@ export const style = StyleSheet.create({
     bottom: 0,
     backgroundColor: PRIMARY,
     borderRadius: VS_100,
+  },
+  screenHeader: {
+    flexDirection: 'row',
+    gap: HS_20,
+    flexShrink: 1,
+    flexGrow: 1,
+  },
+  headerText: {
+    flexGrow: 1,
+    flex: 1,
+  },
+  scrollView: {
+    flex: 1,
+  },
+  hsBar: {
+    width: '95%',
+    height: VS_3,
+    backgroundColor: BACKGROUND,
+    alignSelf: 'center',
+    marginVertical: VS_10,
+  },
+  taskContainer: {
+    paddingHorizontal: HS_20,
+    paddingVertical: VS_15,
   },
 });

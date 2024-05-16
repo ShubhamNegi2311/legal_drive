@@ -1,31 +1,20 @@
 import React, {useState} from 'react';
 import {FlatList, ScrollView, TextInput, View} from 'react-native';
 import {style} from './style';
-import {BaseText} from '../../components/atoms/text';
+import {BaseText} from 'components/atoms/text';
 
 import Bell_Icon from 'react-native-vector-icons/Octicons';
 import Search_Icon from 'react-native-vector-icons/AntDesign';
 import Sliders_Icon from 'react-native-vector-icons/FontAwesome6';
 
-import ImageComponent from '../../components/atoms/image_component';
+import ImageComponent from 'components/atoms/image_component';
 import {FAB} from 'react-native-paper';
-import ProgressStatusComponent from '../../components/progress_status_component';
+import ProgressStatusComponent from 'components/progress_status_component';
 import {Calendar} from 'react-native-calendars';
-import TaskItem from '../../components/task_item_component';
-import SpaceView from '../../components/atoms/space_view';
-import {WHITE, BLACK, PRIMARY, BACKGROUND} from 'styles/colors';
-import {
-  HS_20,
-  HS_50,
-  HS_15,
-  MS_15,
-  MS_20,
-  MS_25,
-  VS_20,
-  VS_3,
-  VS_10,
-  VS_15,
-} from 'styles/mixins';
+import TaskItem from 'components/task_item_component';
+import SpaceView from 'components/atoms/space_view';
+import {WHITE, BLACK, PRIMARY} from 'styles/colors';
+import {HS_50, HS_15, MS_15, MS_20, MS_25, VS_20} from 'styles/mixins';
 
 const WELCOME = 'Welcome';
 const HomeScreen = () => {
@@ -45,20 +34,14 @@ const HomeScreen = () => {
   return (
     <View style={style.mainContainer}>
       <View style={style.upperContainer}>
-        <View
-          style={{
-            flexDirection: 'row',
-            gap: HS_20,
-            flexShrink: 1,
-            flexGrow: 1,
-          }}>
+        <View style={style.screenHeader}>
           <ImageComponent
             height={HS_50}
             width={HS_50}
             uri={'https://reactnativepaper.com/'}
             borderRadius={HS_15}
           />
-          <View style={{flexGrow: 1, flex: 1}}>
+          <View style={style.headerText}>
             <BaseText color={WHITE} fontSize={MS_15} numberOfLines={1}>
               {WELCOME}
             </BaseText>
@@ -85,7 +68,9 @@ const HomeScreen = () => {
             <Sliders_Icon name="sliders" color={BLACK} size={MS_25} />
           </View>
         </View>
-        <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
+        <ScrollView
+          style={style.scrollView}
+          showsVerticalScrollIndicator={false}>
           <ProgressStatusComponent />
           <View
             style={{
@@ -114,22 +99,8 @@ const HomeScreen = () => {
                 todayTextColor: PRIMARY,
               }}
             />
-            <View
-              style={{
-                width: '95%',
-                height: VS_3,
-                backgroundColor: BACKGROUND,
-                alignSelf: 'center',
-                marginVertical: VS_10,
-              }}
-            />
-            <View
-              style={{
-                paddingHorizontal: HS_20,
-                paddingVertical: VS_15,
-                // backgroundColor:'red',
-                // flexWrap:'wrap'
-              }}>
+            <View style={style.hsBar} />
+            <View style={style.taskContainer}>
               <BaseText fontSize={MS_25} color="#9c9c9c">
                 Tasks Today
               </BaseText>
