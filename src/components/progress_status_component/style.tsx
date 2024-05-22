@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {PRIMARY, SECONDARY, WHITE} from 'styles/colors';
-import {HS_10, HS_15, HS_35, HS_5, MS_15, VS_20, VS_40} from 'styles/mixins';
+import {HS_10, HS_15, HS_30, HS_5, MS_15, VS_20, VS_40} from 'styles/mixins';
 
 export const style = StyleSheet.create({
   mainContainer: {
@@ -24,6 +24,8 @@ export const style = StyleSheet.create({
     borderRadius: MS_15,
     paddingHorizontal: HS_10,
     justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   dotIconContainer: {
     borderWidth: 1,
@@ -43,10 +45,11 @@ export const style = StyleSheet.create({
   progressBar: {
     position: 'absolute',
     top: VS_20,
-    left: HS_35,
+    left: HS_30,
   },
   totalfilesContainer: {
-    paddingTop: VS_20,
+    flex: 1,
+    justifyContent: 'flex-end',
   },
   fileNumContainer: {
     alignItems: 'center',

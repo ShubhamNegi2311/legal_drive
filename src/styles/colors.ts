@@ -1,5 +1,5 @@
 export const TextColor = {
-  PRIMARY: '#00FFD2',
+  PRIMARY: '#6777EF',
   LIGHT_PRIMARY: '#00FFD232',
   WHITE: '#FFFFFF',
   LIGHT_WHITE: '#A5A5A5',
@@ -50,7 +50,7 @@ export const CheckBoxColor = {
 export const LOADER_BACKGROUND = '#00000080';
 export const WHITE = '#FFFFFF';
 export const BLACK = '#000000';
-export const PRIMARY = '#6777f0';
+export const PRIMARY = '#6777EF';
 export const SECONDARY = '#69a861';
 export const BACKGROUND = '#f4f4f4';
 export const GRAY = '#282828';

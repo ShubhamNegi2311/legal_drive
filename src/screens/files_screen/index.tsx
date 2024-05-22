@@ -1,15 +1,22 @@
-import {View, TextInput, FlatList} from 'react-native';
+import {FlatList} from 'react-native';
 import React from 'react';
 import {style} from './style';
-import {BaseText} from 'components/atoms/text';
-
 import Icon from 'react-native-vector-icons/AntDesign';
 import Sliders_Icon from 'react-native-vector-icons/FontAwesome6';
 import Dot_Icon from 'react-native-vector-icons/Entypo';
-import {FAB} from 'react-native-paper';
 import SpaceView from 'components/atoms/space_view';
-import {WHITE, BLACK, TextColor} from 'styles/colors';
-import {MS_20, MS_25, MS_30, VS_5, MS_18, MS_12, HS_70} from 'styles/mixins';
+import {WHITE, BLACK, TextColor, PRIMARY} from 'styles/colors';
+import {MS_20, MS_25, MS_30, VS_5, HS_70} from 'styles/mixins';
+import {
+  AddIcon,
+  Fab,
+  FabIcon,
+  Input,
+  InputField,
+  SafeAreaView,
+  Text,
+  View,
+} from '@gluestack-ui/themed';
 
 type ListProps = {
   name: string;
@@ -136,7 +143,7 @@ const list: ListProps[] = [
 
 const FilesScreen = () => {
   return (
-    <View style={style.mainContainer}>
+    <SafeAreaView style={style.mainContainer}>
       <View style={style.upperContainer}>
         <Icon
           name="arrowleft"
@@ -144,17 +151,15 @@ const FilesScreen = () => {
           size={MS_20}
           style={style.arrowIcon}
         />
-        <BaseText color={WHITE} textType={'bold'} fontSize={MS_20}>
+        <Text color={WHITE} bold={true} fontSize={'$xl'}>
           Files
-        </BaseText>
+        </Text>
       </View>
       <View style={style.lowerContainer}>
         <View style={style.inputContainer}>
-          <TextInput
-            style={style.searchInput}
-            placeholder="Search"
-            placeholderTextColor="#afafb1"
-          />
+          <Input style={style.searchInput} variant="underlined">
+            <InputField placeholder="Search" color="#afafb1" />
+          </Input>
           <View style={style.iconContainer}>
             <Icon name="search1" color={BLACK} size={MS_25} />
             <Sliders_Icon name="sliders" color={BLACK} size={MS_25} />
@@ -175,11 +180,21 @@ const FilesScreen = () => {
                     ]}>
                     <Icon name={item.file} color={item.color} size={MS_30} />
                   </View>
-                  <View style={{gap: VS_5}}>
-                    <BaseText fontSize={MS_18}>{item.name}</BaseText>
-                    <BaseText color={TextColor.GRAY} fontSize={MS_12}>
+                  <View style={{gap: VS_5, flex: 1, flexGrow: 1}}>
+                    <Text
+                      fontSize={'$xl'}
+                      numberOfLines={1}
+                      flex={1}
+                      flexGrow={1}>
+                      {item.name}
+                    </Text>
+                    <Text
+                      color={TextColor.GRAY}
+                      fontSize={'$md'}
+                      flex={1}
+                      flexGrow={1}>
                       {item.date}
-                    </BaseText>
+                    </Text>
                   </View>
                 </View>
                 <Dot_Icon
@@ -194,8 +209,16 @@ const FilesScreen = () => {
           ListFooterComponent={<SpaceView height={HS_70} />}
         />
       </View>
-      <FAB icon="plus" color={WHITE} style={style.Fab} />
-    </View>
+      <Fab
+        size="lg"
+        placement="bottom right"
+        bgColor={PRIMARY}
+        isHovered={false}
+        isDisabled={false}
+        isPressed={false}>
+        <FabIcon as={AddIcon} size="lg" />
+      </Fab>
+    </SafeAreaView>
   );
 };
 

@@ -1,37 +1,37 @@
-import {View} from 'react-native';
 import React from 'react';
-import {BaseText} from '../atoms/text';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 
-import Dots_Icon from 'react-native-vector-icons/Entypo';
-import {PRIMARY, SECONDARY, TextColor} from 'styles/colors';
-import {MS_15, MS_12, MS_30} from 'styles/mixins';
+import {BLACK, PRIMARY, SECONDARY, TextColor} from 'styles/colors';
 import {style} from './style';
+import {
+  View,
+  Text,
+  ThreeDotsIcon,
+  Icon,
+  ChevronDownIcon,
+} from '@gluestack-ui/themed';
 
 const ProgressStatusComponent = () => {
   return (
     <View style={style.mainContainer}>
       <View style={style.headingBar}>
-        <BaseText textType="bold">Files</BaseText>
+        <Text bold={true}>Files</Text>
         <View style={style.customBar}>
           <View style={style.monthContainer}>
-            <BaseText color="#afafb1" fontSize={MS_12}>
+            <Text color={BLACK} fontSize={'$xs'}>
               This Month
-            </BaseText>
+            </Text>
+            <Icon as={ChevronDownIcon} w="$4" h="$4" />
           </View>
           <View style={style.dotIconContainer}>
-            <Dots_Icon
-              name="dots-three-horizontal"
-              color={'#afafb1'}
-              size={MS_15}
-            />
+            <Icon as={ThreeDotsIcon} w="$4" h="$4" />
           </View>
         </View>
       </View>
       <View style={style.progressBarContainer}>
         <AnimatedCircularProgress
           lineCap="round"
-          size={250}
+          size={280}
           width={15}
           arcSweepAngle={180}
           fill={60}
@@ -42,10 +42,10 @@ const ProgressStatusComponent = () => {
         />
         <View style={style.totalfilesContainer}>
           <View style={style.fileNumContainer}>
-            <BaseText style={style.fileNum} fontSize={MS_30}>
+            <Text style={style.fileNum} fontSize={'$3xl'}>
               146
-            </BaseText>
-            <BaseText color={TextColor.GRAY}>Total files</BaseText>
+            </Text>
+            <Text color={TextColor.GRAY}>Total files</Text>
           </View>
         </View>
       </View>
@@ -53,16 +53,16 @@ const ProgressStatusComponent = () => {
         <View style={style.lowerContainerRow}>
           <View style={style.pendingLeftBar} />
           <View>
-            <BaseText>Pending Files</BaseText>
-            <BaseText fontSize={MS_30}>100</BaseText>
+            <Text>Pending Files</Text>
+            <Text fontSize={'$3xl'}>100</Text>
           </View>
         </View>
         <View style={style.lowerContainerRow}>
           <View>
-            <BaseText>Pending Files</BaseText>
-            <BaseText fontSize={MS_30} style={style.rightPendingText}>
-              100
-            </BaseText>
+            <Text>Disposed Files</Text>
+            <Text fontSize={'$3xl'} style={style.rightPendingText}>
+              46
+            </Text>
           </View>
           <View style={style.pendingRightBar} />
         </View>

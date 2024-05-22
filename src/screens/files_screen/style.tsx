@@ -11,7 +11,7 @@ import {
   VS_20,
   VS_30,
   VS_5,
-  VS_50,
+  VS_70,
 } from 'styles/mixins';
 
 export const style = StyleSheet.create({
@@ -23,7 +23,7 @@ export const style = StyleSheet.create({
     paddingHorizontal: HS_20,
     backgroundColor: PRIMARY,
     paddingTop: VS_20,
-    paddingBottom: VS_50,
+    paddingBottom: VS_70,
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
@@ -92,5 +92,6 @@ export const style = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: HS_10,
+    flex: 1,
   },
 });

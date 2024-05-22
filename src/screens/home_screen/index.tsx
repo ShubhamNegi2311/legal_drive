@@ -1,20 +1,29 @@
 import React, {useState} from 'react';
-import {FlatList, ScrollView, TextInput, View} from 'react-native';
 import {style} from './style';
-import {BaseText} from 'components/atoms/text';
 
 import Bell_Icon from 'react-native-vector-icons/Octicons';
 import Search_Icon from 'react-native-vector-icons/AntDesign';
 import Sliders_Icon from 'react-native-vector-icons/FontAwesome6';
 
 import ImageComponent from 'components/atoms/image_component';
-import {FAB} from 'react-native-paper';
 import ProgressStatusComponent from 'components/progress_status_component';
 import {Calendar} from 'react-native-calendars';
 import TaskItem from 'components/task_item_component';
 import SpaceView from 'components/atoms/space_view';
 import {WHITE, BLACK, PRIMARY} from 'styles/colors';
-import {HS_50, HS_15, MS_15, MS_20, MS_25, VS_20} from 'styles/mixins';
+import {HS_50, HS_15, MS_15, MS_25, VS_20} from 'styles/mixins';
+import {
+  AddIcon,
+  Fab,
+  FabIcon,
+  Input,
+  InputField,
+  ScrollView,
+  Text,
+  View,
+  SafeAreaView,
+} from '@gluestack-ui/themed';
+import {FlatList} from 'react-native';
 
 const WELCOME = 'Welcome';
 const HomeScreen = () => {
@@ -32,7 +41,7 @@ const HomeScreen = () => {
     'Prepare clothes and items for tomorrow',
   ];
   return (
-    <View style={style.mainContainer}>
+    <SafeAreaView style={style.mainContainer}>
       <View style={style.upperContainer}>
         <View style={style.screenHeader}>
           <ImageComponent
@@ -42,27 +51,21 @@ const HomeScreen = () => {
             borderRadius={HS_15}
           />
           <View style={style.headerText}>
-            <BaseText color={WHITE} fontSize={MS_15} numberOfLines={1}>
+            <Text color={WHITE} fontSize={'$md'} numberOfLines={1}>
               {WELCOME}
-            </BaseText>
-            <BaseText
-              color={WHITE}
-              textType={'bold'}
-              fontSize={MS_20}
-              numberOfLines={1}>
+            </Text>
+            <Text color={WHITE} fontSize={'$2xl'} numberOfLines={1} bold={true}>
               Sahil Rawat
-            </BaseText>
+            </Text>
           </View>
         </View>
         <Bell_Icon name="bell" color={WHITE} size={MS_25} />
       </View>
       <View style={style.lowerContainer}>
         <View style={style.inputContainer}>
-          <TextInput
-            style={style.searchInput}
-            placeholder="Search"
-            placeholderTextColor="#afafb1"
-          />
+          <Input style={style.searchInput} variant="underlined">
+            <InputField placeholder="Search" color="#afafb1" />
+          </Input>
           <View style={style.iconContainer}>
             <Search_Icon name="search1" color={BLACK} size={MS_25} />
             <Sliders_Icon name="sliders" color={BLACK} size={MS_25} />
@@ -101,9 +104,9 @@ const HomeScreen = () => {
             />
             <View style={style.hsBar} />
             <View style={style.taskContainer}>
-              <BaseText fontSize={MS_25} color="#9c9c9c">
+              <Text fontSize={'$xl'} color="#9c9c9c">
                 Tasks Today
-              </BaseText>
+              </Text>
               <FlatList
                 scrollEnabled={false}
                 data={tasksOfTheDay}
@@ -118,8 +121,16 @@ const HomeScreen = () => {
           </View>
         </ScrollView>
       </View>
-      <FAB icon="plus" color={WHITE} style={style.Fab} />
-    </View>
+      <Fab
+        size="lg"
+        placement="bottom right"
+        bgColor={PRIMARY}
+        isHovered={false}
+        isDisabled={false}
+        isPressed={false}>
+        <FabIcon as={AddIcon} size="lg" />
+      </Fab>
+    </SafeAreaView>
   );
 };
 
