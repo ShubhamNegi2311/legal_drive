@@ -20,7 +20,7 @@ const ImageComponent = (props: ImageComponentProps) => {
       console.log(imageUrl);
       return {uri: imageUrl};
     }
-    return require('../../../assets/images/default_img.jpg');
+    return require('../../../assets/images/maki1.jpg');
   };
   return (
     <View style={myStyle.mainContainer}>

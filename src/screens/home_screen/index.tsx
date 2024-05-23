@@ -55,7 +55,7 @@ const HomeScreen = () => {
               {WELCOME}
             </Text>
             <Text color={WHITE} fontSize={'$2xl'} numberOfLines={1} bold={true}>
-              Sahil Rawat
+              Maki Zenin
             </Text>
           </View>
         </View>
