@@ -1,28 +1,35 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/AntDesign';
-import {BLACK, PRIMARY, WHITE} from 'styles/colors';
+import ArrowIcon from 'react-native-vector-icons/AntDesign';
+import {BLACK, WHITE} from 'styles/colors';
+import SignOut from 'assets/images/sign_out.svg';
+import Update from 'assets/images/Group.svg';
 import {
   HS_10,
-  HS_150,
+  HS_120,
+  HS_130,
   HS_20,
   MS_12,
   MS_16,
   MS_18,
   MS_20,
   VS_10,
-  VS_200,
+  VS_20,
+  VS_25,
   VS_30,
 } from 'styles/mixins';
 import {SafeAreaView, Text, View} from '@gluestack-ui/themed';
 import {style} from './style';
 import ImageComponent from 'components/atoms/image_component';
-import IconView, {Vector} from 'components/atoms/icon_view';
-
+import AppInfoComponent from 'components/app_info_component';
+import SpaceView from 'components/atoms/space_view';
+import Call from 'assets/images/call.svg';
+import Message from 'assets/images/messages.svg';
+import MessageEdit from 'assets/images/message-edit.svg';
 const ProfileScreen = () => {
   return (
     <SafeAreaView style={style.mainContainer}>
       <View style={style.upperContainer}>
-        <Icon
+        <ArrowIcon
           name="arrowleft"
           color={WHITE}
           size={MS_20}
@@ -33,34 +40,33 @@ const ProfileScreen = () => {
         </Text>
       </View>
       <View style={style.lowerContainer}>
-        <View height={HS_150}>
+        <View height={HS_120}>
           <View
             position="absolute"
             top={-VS_30}
             alignSelf="center"
-            height={HS_150}
-            width={HS_150}>
+            height={HS_130}
+            width={HS_130}
+            backgroundColor={WHITE}
+            borderRadius={HS_130 / 2}>
             <ImageComponent
-              height={HS_150}
-              width={HS_150}
+              height={HS_130}
+              width={HS_130}
               uri={'https://reactnativepaper.com/'}
-              borderRadius={HS_150 / 2}
+              borderRadius={HS_130 / 2}
             />
           </View>
         </View>
         <View
           flexDirection="row"
           justifyContent="center"
+          alignItems="center"
           gap={HS_20}
           paddingHorizontal={HS_10}>
           <Text numberOfLines={1} flexShrink={1} fontSize={MS_16} bold={true}>
             Maki Zenin
           </Text>
-          <IconView
-            icons={Vector.FONT_AWESOME}
-            iconName="edit"
-            iconColor={PRIMARY}
-          />
+          <MessageEdit />
         </View>
         <Text alignSelf="center" fontSize={MS_12}>
           Admin
@@ -68,21 +74,44 @@ const ProfileScreen = () => {
         <View
           flexDirection="row"
           justifyContent="space-around"
-          flexWrap="wrap"
           paddingHorizontal={HS_10}
           backgroundColor={'rgba(103, 119, 239, 0.07)'}
-          paddingVertical={VS_10}>
-          <View>
-            <Text color={BLACK} numberOfLines={1}>
+          paddingVertical={VS_10}
+          marginVertical={VS_25}>
+          <View flexDirection="row" gap={HS_10} flexGrow={1} flexShrink={1}>
+            <Call />
+            <Text
+              color={BLACK}
+              numberOfLines={1}
+              flexShrink={1}
+              flexGrow={1}
+              fontSize={MS_12}>
               8434615941
             </Text>
           </View>
-          <View>
-            <Text color={BLACK} flexShrink={1} flexGrow={1} numberOfLines={1}>
+          <View flexDirection="row" gap={HS_10} flexGrow={1} flexShrink={1}>
+            <Message />
+            <Text
+              color={BLACK}
+              flexShrink={1}
+              flexGrow={1}
+              numberOfLines={1}
+              fontSize={MS_12}>
               r.g.rdffs@aol.com
             </Text>
           </View>
         </View>
+        <AppInfoComponent
+          heading="Check for App Update"
+          subHeading="Latest software update"
+          IconComponent={<Update />}
+        />
+        <SpaceView height={VS_20} />
+        <AppInfoComponent
+          heading="Sign out"
+          subHeading="Sign out from your account"
+          IconComponent={<SignOut />}
+        />
       </View>
     </SafeAreaView>
   );

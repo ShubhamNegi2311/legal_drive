@@ -82,6 +82,9 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    dexOptions {
+      jumboMode = true
+  }
     signingConfigs {
         debug {
             storeFile file('debug.keystore')

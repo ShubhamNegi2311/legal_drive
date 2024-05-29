@@ -11,7 +11,7 @@ import {Calendar} from 'react-native-calendars';
 import TaskItem from 'components/task_item_component';
 import SpaceView from 'components/atoms/space_view';
 import {WHITE, BLACK, PRIMARY} from 'styles/colors';
-import {HS_50, HS_15, MS_15, MS_25, VS_20} from 'styles/mixins';
+import {HS_50, HS_15, MS_15, MS_25, VS_20, MS_14, MS_18} from 'styles/mixins';
 import {
   AddIcon,
   Fab,
@@ -51,10 +51,10 @@ const HomeScreen = () => {
             borderRadius={HS_15}
           />
           <View style={style.headerText}>
-            <Text color={WHITE} fontSize={'$md'} numberOfLines={1}>
+            <Text color={WHITE} fontSize={MS_14} numberOfLines={1}>
               {WELCOME}
             </Text>
-            <Text color={WHITE} fontSize={'$2xl'} numberOfLines={1} bold={true}>
+            <Text color={WHITE} fontSize={MS_18} numberOfLines={1} bold={true}>
               Maki Zenin
             </Text>
           </View>
@@ -104,7 +104,7 @@ const HomeScreen = () => {
             />
             <View style={style.hsBar} />
             <View style={style.taskContainer}>
-              <Text fontSize={'$xl'} color="#9c9c9c">
+              <Text fontSize={MS_15} color="#9c9c9c">
                 Tasks Today
               </Text>
               <FlatList

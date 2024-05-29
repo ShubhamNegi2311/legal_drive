@@ -2,12 +2,13 @@ export const TextColor = {
   PRIMARY: '#6777EF',
   LIGHT_PRIMARY: '#00FFD232',
   WHITE: '#FFFFFF',
-  LIGHT_WHITE: '#A5A5A5',
+  LIGHT_WHITE: '#E5E5E5', // sigma color
   BLACK: '#000000',
-  GRAY: '#5B5757',
+  GRAY: '#414652', // sigma color
   DARK_GRAY: '#333333',
+  LIGHT_GRAY: '#999999', // sigma color
   ALERT: '#CD1111',
-  LIGHT_BLACK: '#191919',
+  LIGHT_BLACK: '#A0A3A9', // sigma color
 };
 
 export const ButtonColor = {

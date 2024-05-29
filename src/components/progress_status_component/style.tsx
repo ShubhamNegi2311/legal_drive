@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {PRIMARY, SECONDARY, WHITE} from 'styles/colors';
-import {HS_10, HS_15, HS_5, MS_15, VS_20, VS_40} from 'styles/mixins';
+import {HS_10, HS_15, HS_5, MS_15, VS_20, VS_30, VS_40} from 'styles/mixins';
 
 export const style = StyleSheet.create({
   mainContainer: {
@@ -54,12 +54,13 @@ export const style = StyleSheet.create({
     alignItems: 'center',
   },
   fileNum: {
-    fontWeight: '800',
+    fontWeight: '700',
   },
   lowerContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: VS_40,
+    paddingTop: VS_40,
+    paddingBottom: VS_30,
   },
   lowerContainerRow: {
     flexDirection: 'row',
@@ -76,8 +77,5 @@ export const style = StyleSheet.create({
     height: 25,
     backgroundColor: SECONDARY,
     borderRadius: 10,
-  },
-  rightPendingText: {
-    textAlign: 'right',
   },
 });

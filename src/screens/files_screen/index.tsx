@@ -3,10 +3,19 @@ import React from 'react';
 import {style} from './style';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Sliders_Icon from 'react-native-vector-icons/FontAwesome6';
-import Dot_Icon from 'react-native-vector-icons/Entypo';
 import SpaceView from 'components/atoms/space_view';
 import {WHITE, BLACK, TextColor, PRIMARY} from 'styles/colors';
-import {MS_20, MS_25, MS_30, VS_5, HS_70} from 'styles/mixins';
+import {
+  MS_20,
+  MS_25,
+  MS_30,
+  VS_5,
+  HS_70,
+  MS_14,
+  MS_18,
+  MS_10,
+} from 'styles/mixins';
+import DotIcon from 'assets/images/3_dot.svg';
 import {
   AddIcon,
   Fab,
@@ -151,7 +160,7 @@ const FilesScreen = () => {
           size={MS_20}
           style={style.arrowIcon}
         />
-        <Text color={WHITE} bold={true} fontSize={'$xl'}>
+        <Text color={WHITE} bold={true} fontSize={MS_18}>
           Files
         </Text>
       </View>
@@ -180,28 +189,25 @@ const FilesScreen = () => {
                     ]}>
                     <Icon name={item.file} color={item.color} size={MS_30} />
                   </View>
-                  <View style={{gap: VS_5, flex: 1, flexGrow: 1}}>
+                  <View gap={VS_5} flex={1} flexGrow={1}>
                     <Text
-                      fontSize={'$xl'}
+                      fontSize={MS_14}
                       numberOfLines={1}
                       flex={1}
+                      color={TextColor.BLACK}
                       flexGrow={1}>
                       {item.name}
                     </Text>
                     <Text
                       color={TextColor.GRAY}
-                      fontSize={'$md'}
+                      fontSize={MS_10}
                       flex={1}
                       flexGrow={1}>
                       {item.date}
                     </Text>
                   </View>
                 </View>
-                <Dot_Icon
-                  name="dots-three-vertical"
-                  color={BLACK}
-                  size={MS_25}
-                />
+                <DotIcon />
               </View>
             );
           }}

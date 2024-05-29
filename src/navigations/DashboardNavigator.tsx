@@ -5,13 +5,15 @@ import HomeScreen from 'screens/home_screen';
 import FilesScreen from 'screens/files_screen';
 import ProfileScreen from 'screens/profile_screen';
 import SearchScreen from 'screens/search_screen';
-import Home_Icon from 'react-native-vector-icons/Entypo';
-import File_Icon from 'react-native-vector-icons/FontAwesome';
-import Search_Icon from 'react-native-vector-icons/AntDesign';
-import User_Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {BLACK, PRIMARY} from 'styles/colors';
+import {PRIMARY} from 'styles/colors';
 import {VS_70, VS_10, MS_12} from 'styles/mixins';
-
+import Home from 'assets/images/home-2.svg';
+import SelectedHome from 'assets/images/selected_home.svg';
+import File from 'assets/images/File.svg';
+import SelectedFile from 'assets/images/Selected_File.svg';
+import Search from 'assets/images/Search.svg';
+import Profile from 'assets/images/Profile.svg';
+import SelectedProfile from 'assets/images/selected_profile.svg';
 const Tab = createBottomTabNavigator<DashboardStackParamList>();
 
 const DashboardNavigator = () => {
@@ -21,7 +23,7 @@ const DashboardNavigator = () => {
         headerShown: false,
         tabBarHideOnKeyboard: true,
         tabBarActiveTintColor: PRIMARY,
-        tabBarInactiveTintColor: BLACK,
+        tabBarInactiveTintColor: '#999999',
         // tabBarStyle: {paddingVertical:}
         tabBarStyle: {
           height: VS_70,
@@ -35,13 +37,7 @@ const DashboardNavigator = () => {
         name={'homeScreen'}
         options={{
           title: 'Home',
-          tabBarIcon: ({focused}) => (
-            <Home_Icon
-              name="home"
-              color={focused ? PRIMARY : BLACK}
-              size={25}
-            />
-          ),
+          tabBarIcon: ({focused}) => (focused ? <SelectedHome /> : <Home />),
         }}
         component={HomeScreen}
       />
@@ -49,13 +45,7 @@ const DashboardNavigator = () => {
         name={'filesScreen'}
         options={{
           title: 'Files',
-          tabBarIcon: ({focused}) => (
-            <File_Icon
-              name={focused ? 'file' : 'file-o'}
-              color={focused ? PRIMARY : BLACK}
-              size={25}
-            />
-          ),
+          tabBarIcon: ({focused}) => (focused ? <SelectedFile /> : <File />),
         }}
         component={FilesScreen}
       />
@@ -63,13 +53,7 @@ const DashboardNavigator = () => {
         name={'searchScreen'}
         options={{
           title: 'Search',
-          tabBarIcon: ({focused}) => (
-            <Search_Icon
-              name="search1"
-              color={focused ? PRIMARY : BLACK}
-              size={25}
-            />
-          ),
+          tabBarIcon: () => <Search />,
         }}
         component={SearchScreen}
       />
@@ -77,13 +61,8 @@ const DashboardNavigator = () => {
         name={'profileScreen'}
         options={{
           title: 'Profile',
-          tabBarIcon: ({focused}) => (
-            <User_Icon
-              name={focused ? 'account-circle' : 'account-circle-outline'}
-              color={focused ? PRIMARY : BLACK}
-              size={25}
-            />
-          ),
+          tabBarIcon: ({focused}) =>
+            focused ? <SelectedProfile /> : <Profile />,
         }}
         component={ProfileScreen}
       />
