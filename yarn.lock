@@ -7639,11 +7639,6 @@ react-native-circular-progress@^1.4.0:
   dependencies:
     prop-types "^15.8.1"
 
-react-native-country-codes-picker@^2.3.5:
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/react-native-country-codes-picker/-/react-native-country-codes-picker-2.3.5.tgz#159cbbcee14716533cdaa9997d457ab1a943038c"
-  integrity sha512-dDQhd0bVvlmgb84NPhTOmTk5UVYPHtk3lqZI+BPb61H1rC2IDrTvPWENg6u1DMGliqWHQDBYpeH37zvxxQL71w==
-
 react-native-fast-image@^8.6.3:
   version "8.6.3"
   resolved "https://registry.npmjs.org/react-native-fast-image/-/react-native-fast-image-8.6.3.tgz"
