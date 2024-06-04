@@ -1,4 +1,4 @@
-import {Text, View} from '@gluestack-ui/themed';
+import {Pressable, Text, View} from '@gluestack-ui/themed';
 import React from 'react';
 import {WHITE, TextColor} from 'styles/colors';
 import {HS_10, HS_15, HS_20, MS_12, MS_14, VS_32} from 'styles/mixins';
@@ -7,10 +7,12 @@ type AppInfoComponentProps = {
   heading: string;
   subHeading: string;
   IconComponent: React.ReactNode;
+  onPress: () => void;
 };
 const AppInfoComponent = (props: AppInfoComponentProps) => {
   return (
-    <View
+    <Pressable
+      onPress={props.onPress}
       backgroundColor={WHITE}
       marginHorizontal={HS_20}
       flexDirection="row"
@@ -46,7 +48,7 @@ const AppInfoComponent = (props: AppInfoComponentProps) => {
         </View>
       </View>
       <ArrowUp />
-    </View>
+    </Pressable>
   );
 };
 

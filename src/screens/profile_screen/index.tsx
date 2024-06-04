@@ -25,7 +25,18 @@ import SpaceView from 'components/atoms/space_view';
 import Call from 'assets/images/call.svg';
 import Message from 'assets/images/messages.svg';
 import MessageEdit from 'assets/images/message-edit.svg';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {AuthenticationContext} from 'contexts/AuthenticationContext';
+
 const ProfileScreen = () => {
+  const {setUserLoggedIn} = React.useContext(AuthenticationContext);
+  const signoutHandler = async () => {
+    setUserLoggedIn(false);
+    try {
+      await AsyncStorage.clear();
+    } catch (error) {}
+    setUserLoggedIn(false);
+  };
   return (
     <SafeAreaView style={style.mainContainer}>
       <View style={style.upperContainer}>
@@ -102,12 +113,14 @@ const ProfileScreen = () => {
           </View>
         </View>
         <AppInfoComponent
+          onPress={() => {}}
           heading="Check for App Update"
           subHeading="Latest software update"
           IconComponent={<Update />}
         />
         <SpaceView height={VS_20} />
         <AppInfoComponent
+          onPress={signoutHandler}
           heading="Sign out"
           subHeading="Sign out from your account"
           IconComponent={<SignOut />}

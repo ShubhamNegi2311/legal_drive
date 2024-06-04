@@ -2,20 +2,23 @@ export const TextColor = {
   PRIMARY: '#6777EF',
   LIGHT_PRIMARY: '#00FFD232',
   WHITE: '#FFFFFF',
-  LIGHT_WHITE: '#E5E5E5', // sigma color
+  LIGHT_WHITE: '#E5E5E5', // figma color
   BLACK: '#000000',
-  GRAY: '#414652', // sigma color
+  GRAY: '#414652', // figma color
+  GRAY100: '#70747D',
   DARK_GRAY: '#333333',
-  LIGHT_GRAY: '#999999', // sigma color
+  LIGHT_GRAY: '#999999', // figma color
   ALERT: '#CD1111',
-  LIGHT_BLACK: '#A0A3A9', // sigma color
+  LIGHT_BLACK: '#A0A3A9', // figma color
 };
 
 export const ButtonColor = {
   PRIMARY: '#00FFD2',
+  PRIMARY700: '#111827',  //figma color
   PRIMARY_DISABLED: '#00FFD232',
   BLACK: '#000000',
   GREEN: '#1AB82C',
+  BACKGROUND: '#F5F7FA', // figma color
 };
 
 export const BorderColor = {
@@ -57,7 +60,7 @@ export const BACKGROUND = '#f4f4f4';
 export const GRAY = '#282828';
 export const LIGHT_GRAY = '#828282';
 export const DARK_GRAY = '#202020';
-export const DIVIDER_COLOR = '#868686';
+export const DIVIDER_COLOR = '#E7E7E9'; // add figma
 export const IN_APP_LOADER_BACKGROUND = '#000000BB';
 export const NOTIFICATION_DOT = '#EE2222';
 export const SERVICE_CARD_BACKGROUND = '#191919';
