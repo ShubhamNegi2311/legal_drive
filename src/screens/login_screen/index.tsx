@@ -35,6 +35,7 @@ import WhatsAppIcon from 'assets/images/whatsApp_icon.svg';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from 'navigations/types';
 import {Alert} from 'react-native';
+import CounterCodePicker from 'components/organisms/country_code_picker';
 type Props = NativeStackScreenProps<RootStackParamList, 'loginScreen'>;
 
 const LoginScreen = (props: Props) => {
@@ -58,6 +59,7 @@ const LoginScreen = (props: Props) => {
     <SafeAreaView style={style.mainContainer}>
       <View height={'55%'} justifyContent="center" alignItems="center">
         <Image
+          alt=""
           source={require('../../assets/images/login.png')}
           style={style.img}
           resizeMode="contain"
@@ -80,20 +82,10 @@ const LoginScreen = (props: Props) => {
           alignItems="center"
           marginVertical={VS_20}
           gap={HS_20}>
-          <CountryPicker
-            // containerStyle={style.countryPicker}
-            hideCountryFlag={false}
-            countryCode={countryCode}
-            animationType={'slide'}
-            selectedCountryTextStyle={style.selectedCountryTextStyle}
-            countryNameTextStyle={style.countryNameTextStyle}
-            searchBarPlaceHolder={'Search'}
-            // searchBarStyle={style.searchBarStyle}
-            countryFlagStyle={style.countryFlagStyle}
-            selectedValue={setUserCountryCode}
-          />
-
+          <CounterCodePicker />
           <Input
+            flexGrow={1}
+            flexShrink={1}
             style={style.numberInput}
             borderColor={isFocused ? PRIMARY : GRAY}
             variant="outline">

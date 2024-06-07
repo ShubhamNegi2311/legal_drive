@@ -44,6 +44,7 @@ const OtpScreen = (props: Props) => {
     <View style={style.mainContainer}>
       <View style={style.upperContainer}>
         <Image
+          alt=""
           style={style.img}
           source={require('../../assets/images/otp_image.png')}
         />
@@ -99,7 +100,6 @@ const OtpScreen = (props: Props) => {
           marginBottom={VS_30}
           isDisabled={false}
           bg={ButtonColor.PRIMARY700}
-          py={VS_10}
           borderRadius={MS_8}>
           {true ? <ButtonSpinner mr="$1" color={'#04d3f3'} /> : false}
 

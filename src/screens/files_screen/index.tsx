@@ -178,6 +178,8 @@ const FilesScreen = () => {
         <FlatList
           data={list}
           showsVerticalScrollIndicator={false}
+          keyExtractor={(item, index) => index.toString()}
+          ListFooterComponent={<SpaceView height={HS_70} />}
           renderItem={({item}: {item: ListProps}) => {
             return (
               <View style={style.itemContainer}>
@@ -211,8 +213,6 @@ const FilesScreen = () => {
               </View>
             );
           }}
-          keyExtractor={(item, index) => index.toString()}
-          ListFooterComponent={<SpaceView height={HS_70} />}
         />
       </View>
       <Fab

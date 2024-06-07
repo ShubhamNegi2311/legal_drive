@@ -47,7 +47,7 @@ const HomeScreen = () => {
           <ImageComponent
             height={HS_50}
             width={HS_50}
-            uri={'https://reactnativepaper.com/'}
+            uri={'https://reacttivepaper.com/'}
             borderRadius={HS_15}
           />
           <View style={style.headerText}>
