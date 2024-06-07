@@ -19,7 +19,6 @@ const CounterCodePicker = () => {
   const [countryFlag, setCountryFlag] = React.useState('🇮🇳');
   const [countryCodeData, setCountryCodeData] =
     React.useState<CountryInterface[]>(countries);
-    
   const searchByCountryName = (searchText: string) => {
     let filteredJson = countryCodeData.filter(item => {
       const itemData = item.name.toUpperCase();
